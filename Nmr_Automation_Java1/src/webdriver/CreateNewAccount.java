@@ -1,5 +1,10 @@
 package webdriver;
 
+import java.io.FileInputStream;
+import java.sql.Date;
+import java.text.DateFormat;
+import java.text.SimpleDateFormat;
+
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
@@ -28,7 +33,10 @@ public class CreateNewAccount {
 		 driver.findElement( By.name( "birthday_month")).sendKeys("Jan");
 		 driver.findElement(By.name("birthday_year")).sendKeys("1986");
 		 Thread.sleep(8000);
-		 
+		 String screenshortpath = (".\screenshorts");
+		 FileInputStream fi = new FileInputStream(screenshortpath);
+		 Date di= new Date(0);
+		 DateFormat df =  new SimpleDateFormat("YYYY_DD_MMM_HH_MM_SS");
 //		 click on  radio1 button 
 		  driver.findElement(By.id("u_3_2_fk")).click();
 			 
